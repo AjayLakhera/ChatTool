@@ -1,10 +1,15 @@
+
+/*openWindow.cpp 
+* 
+* Implementation of IRC Chat client 
+*
+*@author ajay kumar
+*/
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <strsafe.h>
 #include <conio.h>
 
-//#include <iostream>
-//#using namespace std;
 
 #define			MAX_THREADS				3
 #define			MAX_SIZE				255

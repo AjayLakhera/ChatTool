@@ -1,9 +1,13 @@
+/*openWindow.cpp 
+* 
+* Implementation of IRC Chat client 
+*
+*@author ajay kumar
+*/
 #include"TCPHeader.h"
 #include<stdio.h>
 #include<conio.h>
 #include<windows.h>
-//#include <winsock2.h>
-//#include <ws2tcpip.h>
 
 
 
@@ -69,7 +73,7 @@ void WINAPI AjayServiceCtrlHandler (DWORD Opcode)
    { 
       case SERVICE_CONTROL_PAUSE:
 		 //service wants paused
-		 //MyServiceStatus.dwCurrentState = SERVICE_PAUSED; 
+		 MyServiceStatus.dwCurrentState = SERVICE_PAUSED; 
          break; 
  
       case SERVICE_CONTROL_CONTINUE:
@@ -96,7 +100,7 @@ void CreateServ()
 	TCHAR szPath[MAX_PATH]={0};
 	char tempb[250]={0};
         
- /*   if( !GetModuleFileName( "D:\Hakathon\TCPThread\TCPThread\Debug\TCPThread.exe", szPath, MAX_PATH ) )
+ /*   if( !GetModuleFileName( "..\..\TCPThread\TCPThread\Debug\TCPThread.exe", szPath, MAX_PATH ) )
     {
 		sprintf(tempb,"Cannot install service (%d)\n", GetLastError());
 		MessageBox(NULL,tempb,"Error",0);
@@ -126,7 +130,7 @@ void CreateServ()
         SERVICE_WIN32_OWN_PROCESS, // service type 
         SERVICE_DEMAND_START,      // start type 
         SERVICE_ERROR_NORMAL,      // error control type 
-        "D:\\Hakathon\\TCPThread\\TCPThread\\Debug\\TCPThread.exe",                    // path to service's binary 
+        "...\\..\\TCPThread\\TCPThread\\Debug\\TCPThread.exe",                    // path to service's binary 
         NULL,                      // no load ordering group 
         NULL,                      // no tag identifier 
         NULL,                      // no dependencies 

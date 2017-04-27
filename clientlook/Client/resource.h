@@ -1,6 +1,9 @@
-//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by chat_client.rc
+/*openWindow.cpp 
+* 
+* Implementation of IRC Chat client 
+*
+*@author ajay kumar
+*/
 //
 #define IDR_RT_MANIFEST1                102
 #define IDR_MENU1                       106

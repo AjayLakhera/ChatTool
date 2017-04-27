@@ -1,3 +1,4 @@
+
 /*openWindow.cpp 
 * 
 * Implementation of IRC Chat client 

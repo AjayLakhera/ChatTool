@@ -1,3 +1,9 @@
+/*openWindow.cpp 
+* 
+* Implementation of IRC Chat client 
+*
+*@author ajay kumar
+*/
 // Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"

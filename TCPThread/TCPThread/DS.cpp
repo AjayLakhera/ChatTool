@@ -1,3 +1,10 @@
+
+/*openWindow.cpp 
+* 
+* Implementation of IRC Chat client 
+*
+*@author ajay kumar
+*/
 #include "TCPHeader.h"
 //HANDLE thread2;
 //HANDLE SendEvent;

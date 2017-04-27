@@ -1,6 +1,10 @@
+/*openWindow.cpp 
+* 
+* Implementation of IRC Chat client 
+*
+*@author ajay kumar
+*/
 //WINDOWS.H is a master header file that includes other Windows header files
-//#include <windows.h>
-//#include<Commctrl.h>
 #include <stdio.h>
 #include <conio.h>
 #include <winsock2.h>

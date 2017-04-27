@@ -1,3 +1,9 @@
+/*openWindow.cpp 
+* 
+* Implementation of IRC Chat client 
+*
+*@author ajay kumar
+*/
 #include"TCPHeader.h"
 SOCKET  ListenSocket=INVALID_SOCKET;
 HANDLE thread1 = NULL;

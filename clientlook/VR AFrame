@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RotateCube</title>
+	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+
+	<script>
+		AFRAME.registerComponent('set-sky',  {
+			schema: { default: '' },
+			init() {
+				const box = document.querySelector('a-box');
+				const text = document.querySelector('#info');
+				
+				//this.el.addEventListener('stateadded', function (evt) {
+				//	if (evt.detail.state === 'selected') {
+				//		console.log('Entity now selected!');
+				//	}
+				//});
+
+				this.el.addEventListener('click', () => {
+					console.log(this.el.id);
+					console.log(this.data);
+
+					if (this.el.id == 'ind') {
+						box.setAttribute('visible', "false");
+						text.setAttribute('value', this.data);
+						text.setAttribute('color', 'black');
+						/// code to be written
+
+					} else {
+
+						box.setAttribute('visible', "true");
+						box.setAttribute('color', "white");
+						box.setAttribute('position', "0 0-6");
+						box.setAttribute('width', "5");
+						box.setAttribute('depth', ".1");
+						box.setAttribute('height', "2");
+						text.setAttribute('value', this.data);
+						text.setAttribute('color', 'black');	
+					}
+
+				});
+			}
+		});
+	</script>
+
+</head>
+<body>
+	<a-scene>
+
+		<a-camera position=" 0 5 4">
+			<a-cursor color="#4ff3ff" fuse="true" timeout="10"></a-cursor>
+		</a-camera>
+		<a-assets>
+			<img id="france" src="france1.jpg">
+			<img id="germany" src="Germany1.jpg">
+			<img id="india" src="India1.jpg">
+			<img id="italy" src="italy.jpg">
+			<img id="Luxembourg1" src="luxembourg1.jpg">
+		</a-assets>
+
+		<a-assets>
+			<img id="sky" src="test1.jpg">
+		</a-assets>
+		<a-sky src="#sky"></a-sky>
+
+
+		
+
+		<!--<a-box color="tomato" depth=".1" height="2" width="5" position="-3 4 -6"></a-box>-->
+		<a-box ><a-text id="info" value=""></a-text></a-box>
+
+		<a-entity>
+			<a-entity line="start: -6 0.1 -5; end: -6 2 -5; color: red"
+					  line__2="start: -6.2 0.1 -5; end:  -6.2 0.5 -5; color: green"
+					  line__3="start:-5.9 0.1 -5; end: -5.9 1 -5; color: green"></a-entity>
+
+			<a-sphere src="#france" height="1.5" width="3.8" depth="10" position="-6 -.7 -5.6" id='fr' set-sky="Its France!">
+				<a-animation attribute="rotation"
+							 easing="linear"
+							 dur="10000"
+							 to="0 360 0"
+							 repeat="indefinite">
+				</a-animation>
+			</a-sphere>
+
+			<a-entity line="start: -3 0 -5; end: -3 2 -5; color: red"
+					  line__2="start: -2.8 0 -5; end:  -2.8 0.5 -5; color: green"
+					  line__3="start:-2.5 0 -5; end:-2.5 1 -5; color: green"></a-entity>
+
+			<a-text font="kelsonsans" value="France" width="6" position="-6.7 1 -5" color="white"></a-text>
+			<a-sphere src="#germany" height="1.5" width="4" depth="7" position="-2.5 -.6 -5" id='ger' set-sky="Its Germany!">
+				<a-animation attribute="rotation"
+							 easing="linear"
+							 dur="10000"
+							 to="0 360 0"
+							 repeat="indefinite">
+				</a-animation>
+			</a-sphere>
+
+			<a-text font="kelsonsans" value="Germany" width="6" position="-3.7 1 -5" color="white"></a-text>
+			<a-entity line="start: 0 0 -5; end: 0 2 -5; color: green"
+					  line__2="start: 0.3 0 -5; end:  0.3 0.5 -5; color: green"
+					  line__3="start: 0.5 0 -5 ; end: 0.5 0.9 -5; color: green"></a-entity>
+
+			<a-text font="kelsonsans" value="India" width="6" position="-.3 1 -5" color="white"></a-text>
+			<a-sphere src="#india" height="1.5" width="4" depth="7" position="0 -.6 -5" id='ind' set-sky="Its India!">
+				<a-animation attribute="rotation"
+							 easing="linear"
+							 dur="10000"
+							 to="0 360 0"
+							 repeat="indefinite">
+				</a-animation>
+			</a-sphere>
+
+			<a-text font="kelsonsans" value="Italy" width="6" position="2.3 1 -5" color="white"></a-text>
+			<a-sphere src="#italy" height="1.5" width="4" depth="7" position="2.5 -.6 -5" id='itl' set-sky="Its Italy!">
+				<a-animation attribute="rotation"
+							 easing="linear"
+							 dur="10000"
+							 to="0 360 0"
+							 repeat="indefinite">
+				</a-animation>
+			</a-sphere>
+
+			<a-text font="kelsonsans" value="Luxembourg" width="6" position="4.4 1 -5" color="white"></a-text>
+			<a-sphere src="#Luxembourg1" height="1.5" width="4" depth="7" position="5.6 -.6 -5.5" id='lux' set-sky="Its Luxembourg !">
+				<a-animation attribute="rotation"
+							 easing="linear"
+							 dur="10000"
+							 to="0 360 0"
+							 repeat="indefinite">
+				</a-animation>
+			</a-sphere>
+
+		</a-entity>
+
+	</a-scene>
+</body>
+</html>
